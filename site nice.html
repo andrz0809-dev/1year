@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Um ano juntos amor❤️</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap');
+
+    :root {
+      --rosa: #e85d75;
+      --rosa-claro: #fff0f3;
+      --vinho: #782b43;
+      --texto: #573542;
+      --branco: #fffaf9;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--branco);
+      color: var(--texto);
+      overflow-x: hidden;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    .coracoes {
+      position: fixed;
+      inset: 0;
+      overflow: hidden;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .coracao {
+      position: absolute;
+      bottom: -50px;
+      color: #e85d75;
+      opacity: 0;
+      animation: subir linear infinite;
+    }
+
+    @keyframes subir {
+      0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+      }
+      15% {
+        opacity: 0.3;
+      }
+      85% {
+        opacity: 0.2;
+      }
+      100% {
+        transform: translateY(-110vh) rotate(35deg);
+        opacity: 0;
+      }
+    }
+
+    .conteudo {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero {
+      min-height: 100svh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 60px 22px;
+      background:
+        radial-gradient(ellipse at top, #ffe0e7 0%, transparent 60%),
+        linear-gradient(180deg, #fff5f6, #fffaf9);
+    }
+
+    .pequeno {
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      font-size: 0.72rem;
+      color: var(--rosa);
+      font-weight: 700;
+    }
+
+    .coracao-grande {
+      font-size: 65px;
+      margin: 25px 0;
+      animation: bater 1.4s infinite;
+      filter: drop-shadow(0 8px 15px #e85d7530);
+    }
+
+    @keyframes bater {
+      0%, 100% { transform: scale(1); }
+      15% { transform: scale(1.13); }
+      30% { transform: scale(1); }
+      45% { transform: scale(1.08); }
+    }
+
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 500;
+    }
+
+    h1 {
+      font-size: clamp(3rem, 9vw, 6rem);
+      line-height: 1.1;
+      color: var(--vinho);
+      max-width: 850px;
+    }
+
+    h1 em {
+      color: var(--rosa);
+    }
+
+    .subtitulo {
+      max-width: 500px;
+      margin-top: 22px;
+      line-height: 1.9;
+      font-size: 1.02rem;
+      color: #916777;
+    }
+
+    .botao {
+      display: inline-block;
+      border: none;
+      background: var(--rosa);
+      color: white;
+      padding: 15px 27px;
+      border-radius: 40px;
+      text-decoration: none;
+      cursor: pointer;
+      font-weight: 700;
+      box-shadow: 0 10px 25px #e85d7530;
+      transition: 0.25s;
+    }
+
+    .botao:hover {
+      transform: translateY(-3px);
+      background: #d84965;
+    }
+
+    .hero .botao {
+      margin-top: 32px;
+    }
+
+    .seta {
+      margin-top: 50px;
+      color: #c18b9b;
+      font-size: 0.8rem;
+      letter-spacing: 2px;
+    }
+
+    section:not(.hero) {
+      padding: 90px 22px;
+    }
+
+    .secao {
+      max-width: 1050px;
+      margin: 0 auto;
+    }
+
+    .centro {
+      text-align: center;
+    }
+
+    h2 {
+      font-size: clamp(2.3rem, 6vw, 3.8rem);
+      color: var(--vinho);
+      margin-top: 15px;
+      line-height: 1.2;
+    }
+
+    .descricao {
+      max-width: 600px;
+      margin: 20px auto 0;
+      line-height: 1.9;
+      color: #916777;
+    }
+
+    .contador {
+      background: white;
+      border: 1px solid #f6dce3;
+      border-radius: 28px;
+      padding: 30px 20px;
+      max-width: 650px;
+      margin: 40px auto 0;
+      box-shadow: 0 15px 50px #782b430b;
+    }
+
+    .contador-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .numero {
+      background: var(--rosa-claro);
+      border-radius: 18px;
+      padding: 20px 8px;
+    }
+
+    .numero strong {
+      display: block;
+      font-size: clamp(1.7rem, 5vw, 2.7rem);
+      color: var(--rosa);
+    }
+
+    .numero span {
+      font-size: 0.75rem;
+      color: #916777;
+    }
+
+    .nota {
+      font-size: 0.8rem;
+      color: #b18b98;
+      margin-top: 20px;
+    }
+
+    .memorias {
+      background: #fff0f3;
+    }
+
+    .galeria {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      margin-top: 45px;
+    }
+
+    .cartao {
+      background: white;
+      border-radius: 22px;
+      padding: 12px;
+      box-shadow: 0 12px 35px #782b430b;
+      transition: transform 0.25s;
+    }
+
+    .cartao:hover {
+      transform: translateY(-5px);
+    }
+
+    .foto {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      display: block;
+      border-radius: 15px;
+      background: linear-gradient(135deg, #ffd5df, #f8e5ed);
+    }
+
+    .legenda {
+      padding: 17px 8px 13px;
+    }
+
+    .legenda h3 {
+      color: var(--vinho);
+      font-size: 1.3rem;
+    }
+
+    .legenda p {
+      font-size: 0.88rem;
+      color: #916777;
+      line-height: 1.7;
+      margin-top: 8px;
+    }
+
+    .carta {
+      background:
+        radial-gradient(ellipse at bottom left, #ffe4e9, transparent 60%),
+        var(--branco);
+    }
+
+    .papel {
+      max-width: 760px;
+      margin: 40px auto 0;
+      padding: clamp(25px, 6vw, 60px);
+      border-radius: 8px;
+      background: white;
+      border: 1px solid #f4dfe5;
+      box-shadow: 0 20px 60px #782b430d;
+      position: relative;
+    }
+
+    .papel::before {
+      content: '♥';
+      position: absolute;
+      top: 18px;
+      right: 22px;
+      color: #f3a6b8;
+      font-size: 24px;
+    }
+
+    .papel p {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.12rem;
+      line-height: 2;
+      margin-top: 20px;
+      color: #754657;
+    }
+
+    .assinatura {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 1.6rem;
+      color: var(--rosa);
+      margin-top: 30px;
+    }
+
+    .surpresa {
+      background: var(--vinho);
+      color: #fff0f3;
+      text-align: center;
+    }
+
+    .surpresa h2 {
+      color: white;
+    }
+
+    .surpresa .descricao {
+      color: #f4cbd6;
+    }
+
+    .surpresa .botao {
+      background: white;
+      color: var(--vinho);
+      margin-top: 30px;
+      box-shadow: none;
+    }
+
+    .mensagem-escondida {
+      max-width: 600px;
+      margin: 30px auto 0;
+      padding: 25px;
+      border: 1px solid #ffffff35;
+      border-radius: 20px;
+      line-height: 2;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      display: none;
+      animation: aparecer 0.7s ease;
+    }
+
+    .mensagem-escondida.visivel {
+      display: block;
+    }
+
+    @keyframes aparecer {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      color: #a77a8a;
+      background: #fff5f6;
+      font-size: 0.85rem;
+      line-height: 2;
+    }
+
+    @media (max-width: 760px) {
+      .galeria {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+      }
+
+      .legenda h3 {
+        font-size: 1.05rem;
+      }
+
+      .contador-grid {
+        gap: 6px;
+      }
+
+      .numero {
+        padding: 16px 4px;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .galeria {
+        grid-template-columns: 1fr;
+      }
+
+      .cartao {
+        max-width: 330px;
+        margin: 0 auto;
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="coracoes" id="coracoes"></div>
+
+  <div class="conteudo">
+
+    <!-- CAPA -->
+    <header class="hero">
+      <div class="pequeno">A data mais especial para mim · ❤️</div>
+      <div class="coracao-grande">♥</div>
+
+      <h1>Um ano de <em>nós.</em></h1>
+
+      <p class="subtitulo">
+        Um ano de histórias, de sorrisos, de momentos nossos.
+        E se pudesse voltar atrás, escolheria te outra vez.
+        Esta pequena página é só para te lembrar do quanto és especial e importante para mim.
+      </p>
+
+      <a href="#contador" class="botao">A nossa história começou aqui ↓</a>
+
+      <div class="seta">FEITO COM AMOR, PARA TI</div>
+    </header>
+
+    <!-- CONTADOR -->
+    <section id="contador">
+      <div class="secao centro">
+        <div class="pequeno">365 dias juntos</div>
+        <h2>O nosso primeiro capítulo</h2>
+
+        <p class="descricao">
+          Um ano pode parecer pouco para algumas pessoas.
+          Para mim, é um ano cheio de pequenas coisas que tornaram os meus dias melhores.
+        </p>
+
+        <div class="contador">
+          <div class="pequeno">O tempo da nossa história</div>
+
+          <div class="contador-grid">
+            <div class="numero">
+              <strong id="dias">365</strong>
+              <span>Dias</span>
+            </div>
+            <div class="numero">
+              <strong id="horas">00</strong>
+              <span>Horas</span>
+            </div>
+            <div class="numero">
+              <strong id="minutos">00</strong>
+              <span>Minutos</span>
+            </div>
+            <div class="numero">
+              <strong id="segundos">00</strong>
+              <span>Segundos</span>
+            </div>
+          </div>
+
+          <p class="nota">
+            te amo❤️
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- AS NOSSAS FOTOGRAFIAS -->
+    <section class="memorias">
+      <div class="secao">
+        <div class="centro">
+          <h2>O nosso álbum ❤️</h2>
+          <p class="descricao">
+            Cada fotografia guarda uma história.
+           
+          </p>
+        </div>
+
+        <div class="galeria">
+
+          <!-- FOTOGRAFIA 1 -->
+          <article class="cartao">
+            <img class="foto" src="fotos/fotoprime.jpeg" alt="Uma das nossas fotografias">
+            <div class="legenda">
+              <h3>O nosso começo</h3>
+              <p>O início de uma história que se tornou tão importante para mim.</p>
+            </div>
+          </article>
+
+          <!-- FOTOGRAFIA 2 -->
+          <article class="cartao">
+            <img class="foto" src="fotos/a.png" alt="Uma recordação nossa">
+            <div class="legenda">
+              <h3>Os nossos sorrisos</h3>
+              <p>Porque contigo até os momentos mais simples têm algo de especial.</p>
+            </div>
+          </article>
+
+          <!-- FOTOGRAFIA 3 -->
+          <article class="cartao">
+            <img class="foto" src="fotos/dia3.jpeg" alt="Um momento especial">
+            <div class="legenda">
+              <h3>Um dia inesquecível</h3>
+              <p>Um daqueles momentos que gostava de poder reviver.</p>
+            </div>
+          </article>
+
+          <!-- FOTOGRAFIA 4 -->
+          <article class="cartao">
+            <img class="foto" src="fotos/foto4.jpeg" alt="Mais uma fotografia nossa">
+            <div class="legenda">
+              <h3>As nossas brincadeiras</h3>
+              <p>As piadas, as conversas e todas as pequenas coisas que são só nossas.</p>
+            </div>
+          </article>
+
+          <!-- FOTOGRAFIA 5 -->
+          <article class="cartao">
+            <img class="foto" src="fotos/5.jpeg" alt="Uma recordação especial">
+            <div class="legenda">
+              <h3>O meu lugar feliz</h3>
+              <p>Não é preciso um dia perfeito quando posso partilhar o momento contigo.</p>
+            </div>
+          </article>
+
+          <!-- FOTOGRAFIA 6 -->
+          <article class="cartao">
+            <img class="foto" src="fotos/6.jpeg" alt="Uma fotografia para guardar">
+            <div class="legenda">
+              <h3>Mais um capítulo</h3>
+              <p>Um ano passou. Ainda temos tantas memórias bonitas para criar.</p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CARTA -->
+    <section class="carta">
+      <div class="secao">
+        <div class="centro">
+          <div class="pequeno">Só para ti</div>
+          <h2>Uma pequena carta</h2>
+          <p class="descricao">Há coisas que merecem ser ditas mais do que uma vez.</p>
+        </div>
+
+        <div class="papel">
+          <p>Meu amor,</p>
+
+          <p>
+            Hoje fazemos um ano de namoro e queria que tivesses algo
+            que pudesses guardar e reler sempre que quiseres.
+          </p>
+
+          <p>
+            Obrigado por fazeres parte da minha vida, pelos momentos
+            que partilhamos, pelas conversas, pelos sorrisos e por todas
+            as pequenas coisas que talvez pareçam simples, mas que
+            significam muito para mim.
+          </p>
+
+          <p>
+            Não sei tudo o que o futuro nos reserva, mas sei que quero
+            continuar a construir memórias contigo, aprender contigo
+            e celebrar cada novo capítulo da nossa história.
+          </p>
+
+          <p>
+            Um ano foi apenas o começo. Quero que ainda tenhamos
+            muitas datas para celebrar e muitas fotografias para acrescentar a este álbum.
+          </p>
+
+          <p>
+            Feliz primeiro aniversário juntos, meu amor.
+            Obrigado por seres tu. ❤️
+          </p>
+
+          <div class="assinatura">Com todo o meu amor ♥</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SURPRESA -->
+    <section class="surpresa">
+      <div class="secao">
+        <div class="pequeno" style="color:#ffc4d2">Uma última coisinha</div>
+        <h2>Tenho uma surpresa para ti...</h2>
+
+        <p class="descricao">
+          Antes de saíres desta página, carrega no botão.
+          Preparei mais umas palavras só para ti.
+        </p>
+
+        <button class="botao" onclick="mostrarSurpresa()">
+          Abre a minha surpresa 💌
+        </button>
+
+        <div class="mensagem-escondida" id="surpresa">
+          Se pudesse escolher uma pessoa para viver outra vez este ano,
+          escolher a te a ti. Não porque todos os dias sejam perfeitos,
+          mas porque és tu quem faz parte desta história comigo.
+
+          <br><br>
+
+          Que este seja o primeiro de muitos aniversários.Amo-te. ❤️
+
+          <br><br>
+		
+          <span style="font-size: 2rem;">∞ A♥A ∞</span>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      Feito com amor, para a pessoa que torna a minha história mais bonita. ❤️
+      <br>
+      Um ano de nós — e ainda só estamos no começo.
+    </footer>
+
+  </div>
+
+  <script>
+    /*
+      IMPORTANTE:
+      Altera a data abaixo para a data em que começaram a namorar.
+      Formato: ano, mês (0 = janeiro, 1 = fevereiro, ...), dia.
+      Exemplo: 25 de outubro de 2025 = new Date(2025, 9, 25)
+    */
+
+    const dataInicio = new Date(2025, 9, 28);
+
+    function atualizarContador() {
+      const agora = new Date();
+      let diferenca = Math.max(0, agora - dataInicio);
+
+      const segundosTotais = Math.floor(diferenca / 1000);
+      const dias = Math.floor(segundosTotais / 86400);
+      const horas = Math.floor((segundosTotais % 86400) / 3600);
+      const minutos = Math.floor((segundosTotais % 3600) / 60);
+      const segundos = segundosTotais % 60;
+
+      document.getElementById("dias").textContent = dias;
+      document.getElementById("horas").textContent = String(horas).padStart(2, "0");
+      document.getElementById("minutos").textContent = String(minutos).padStart(2, "0");
+      document.getElementById("segundos").textContent = String(segundos).padStart(2, "0");
+    }
+
+    atualizarContador();
+    setInterval(atualizarContador, 1000);
+
+    function mostrarSurpresa() {
+      const mensagem = document.getElementById("surpresa");
+      mensagem.classList.toggle("visivel");
+
+      if (mensagem.classList.contains("visivel")) {
+        mensagem.scrollIntoView({ behavior: "smooth", block: "center" });
+      }
+    }
+
+    // Pequenos corações a flutuar no fundo
+    const fundoCoracoes = document.getElementById("coracoes");
+
+    for (let i = 0; i < 18; i++) {
+      const coracao = document.createElement("span");
+      coracao.className = "coracao";
+      coracao.textContent = Math.random() > 0.5 ? "♥" : "♡";
+      coracao.style.left = Math.random() * 100 + "%";
+      coracao.style.fontSize = (12 + Math.random() * 20) + "px";
+      coracao.style.animationDuration = (12 + Math.random() * 18) + "s";
+      coracao.style.animationDelay = (-Math.random() * 25) + "s";
+      fundoCoracoes.appendChild(coracao);
+    }
+  </script>
+</body>
+</html>
